@@ -37,7 +37,7 @@
         const message = document.getElementById("message");
         const messages = document.getElementById("messages");
 
-        const socket = io("http://localhost:8080");
+        const socket = io("https://lyon-socket-server.herokuapp.com");
         
         form.addEventListener("submit", e => {
             e.preventDefault();
