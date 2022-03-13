@@ -3,6 +3,7 @@ const path = require("path");
 
 const express = require("express");
 const socketio = require("socket.io");
+const cors = require("cors");
 
 const Sockets = require("./sockets");
 
@@ -17,6 +18,8 @@ class Server {
     }
 
     setMiddlewares() {
+        // Set CORS
+        this.app.use(cors());
         // Deploy public dir
         this.app.use(express.static( path.resolve( __dirname, "../public" ) ));
     }
